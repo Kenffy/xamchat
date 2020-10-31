@@ -5,6 +5,7 @@ using Infrastructure.Data;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Core.Interfaces;
 
 namespace API.Controllers
 {
@@ -12,24 +13,31 @@ namespace API.Controllers
     [Route("api/[controller]")]
     public class ChatsController : ControllerBase
     {
-        private readonly StoreContext _context;
-        public ChatsController(StoreContext context)
+        private readonly IChatRepository _repo;
+        public ChatsController(IChatRepository repo)
         {
-            _context = context;
+            _repo = repo;
         }
 
         [HttpGet]
         public async Task<ActionResult<List<Chat>>> GetChats()
         {
-            var chats = await _context.Chats.ToListAsync();
+            var chats = await _repo.GetChatsAsync();
             return Ok(chats);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<Chat>> GetChat(int id)
         {
-            var chat = await _context.Chats.FindAsync(id);
+            var chat = await _repo.GetChatByIdAsync(id);
             return Ok(chat);
+        }
+
+        [HttpGet("medias")]
+        public async Task<ActionResult<Chat>> GetMedias()
+        {
+            var medias = await _repo.GetMediasAsync();
+            return Ok(medias);
         }
     }
 }

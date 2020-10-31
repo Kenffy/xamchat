@@ -1,0 +1,35 @@
+[
+  {
+    "Sender": "admin@gmail.com",
+    "Receiver": "hulrich@gmail.com",
+    "Message": "Hi!",
+    "CreatedOn": "2020-10-26T00:00:00",
+    "UserId": "user1",
+    "MediaId": 1
+  },
+  {
+    "Sender": "hulrich@gmail.com",
+    "Receiver": "admin@gmail.com",
+    "Message": "Hi! ca dikoi",
+    "CreatedOn": "2020-10-26T00:00:00",
+    "UserId": "user2",
+    "MediaId": 1
+  },
+  {
+    "Sender": "admin@gmail.com",
+    "Receiver": "hulrich@gmail.com",
+    "Message": "Non ca va je suis la et toi?",
+    "CreatedOn": "2020-10-26T00:00:00",
+    "UserId": "user1",
+    "MediaId": 1
+  },
+  {
+    "Sender": "hulrich@gmail.com",
+    "Receiver": "admin@gmail.com",
+    "Message": "ca va on gere",
+    "CreatedOn": "2020-10-26T00:00:00",
+    "UserId": "user2",
+    "MediaId": 1
+    
+  }
+]
