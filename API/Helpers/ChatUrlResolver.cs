@@ -1,5 +1,4 @@
 
-
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
@@ -19,7 +18,7 @@ namespace API.Helpers
         {
             if(!string.IsNullOrEmpty(source.Media.DocumentUrl))
             {
-                return _config["ApiUrl"] + source.Media.DocumentUrl;
+                return _config["ApiUrl"] + "images/chats/" + source.Media.DocumentUrl;
             }
 
             return null;

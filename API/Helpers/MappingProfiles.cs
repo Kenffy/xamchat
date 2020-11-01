@@ -1,6 +1,7 @@
 using API.Dtos;
 using AutoMapper;
 using Core.Entities;
+using Core.Identity.Entities;
 
 namespace API.Helpers
 {
@@ -13,6 +14,12 @@ namespace API.Helpers
                 .ForMember(m => m.VideoUrl, c => c.MapFrom(s => s.Media.VideoUrl))
                 .ForMember(m => m.AudioUrl, c => c.MapFrom(s => s.Media.AudioUrl))
                 .ForMember(m => m.DocumentUrl, c => c.MapFrom<ChatUrlResolver>());
+
+            CreateMap<Address, AddressDto>().ReverseMap();
+            CreateMap<AppUser, UserDto>()
+                .ForMember(m => m.FullName, u => u.MapFrom(x => x.FullName))
+                .ForMember(m => m.Email, u => u.MapFrom(x => x.Email))
+                .ForMember(m => m.PictureUrl, u => u.MapFrom<UserUrlResolver>());
         }
     }
 }
