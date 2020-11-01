@@ -1,3 +1,5 @@
+using API.Controllers.Helpers;
+using AutoMapper;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Builder;
@@ -23,7 +25,9 @@ namespace API
         {
             services.AddControllers();
             services.AddDbContext<StoreContext>(x => x.UseSqlite(_config.GetConnectionString("DefaultConnection")));
+            services.AddScoped(typeof(IRepository<>), (typeof(Repository<>)));
             services.AddScoped<IChatRepository, ChatRepository>();
+            services.AddAutoMapper(typeof(MappingProfiles));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -37,6 +41,7 @@ namespace API
             app.UseHttpsRedirection();
 
             app.UseRouting();
+            app.UseStaticFiles();
 
             app.UseAuthorization();
 
