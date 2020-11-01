@@ -11,6 +11,7 @@ using API.Dtos;
 using AutoMapper;
 using API.Errors;
 using Microsoft.AspNetCore.Http;
+using API.Helpers;
 
 namespace API.Controllers
 {
@@ -27,12 +28,16 @@ namespace API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IReadOnlyList<ChatDto>>> GetChats()
+        public async Task<ActionResult<Pagination<ChatDto>>> GetChats([FromQuery] ChatSpecParams chatParams)
         {
-            var spec = new ChatWithMediaSpecification();
+            var spec = new ChatWithMediaSpecification(chatParams);
+            var countSpec = new ChatWithFilterForCountSpecification(chatParams);
+            var totalchats = await _chatrepo.CountAsync(countSpec);
             var chats = await _chatrepo.ListAsync(spec);
 
-            return Ok(_mapper.Map<IReadOnlyList<Chat>, IReadOnlyList<ChatDto>>(chats));
+            var data = _mapper.Map<IReadOnlyList<Chat>, IReadOnlyList<ChatDto>>(chats);
+
+            return Ok(new Pagination<ChatDto>(chatParams.PageIndex, chatParams.PageSize, totalchats, data));
         }
 
         [HttpGet("{id}")]
