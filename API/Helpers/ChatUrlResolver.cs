@@ -5,7 +5,7 @@ using AutoMapper;
 using Core.Entities;
 using Microsoft.Extensions.Configuration;
 
-namespace API.Controllers.Helpers
+namespace API.Helpers
 {
     public class ChatUrlResolver : IValueResolver<Chat, ChatDto, string>
     {
