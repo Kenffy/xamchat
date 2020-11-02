@@ -14,6 +14,9 @@ namespace Core.Specifications
         
         public string Sort {get; set;}
 
+        public string wu { get; set; }
+        public string me { get; set; }
+
         private string _search;
         public string Search
         {

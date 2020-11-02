@@ -14,7 +14,6 @@ namespace API.Dtos
         [Required]
         public string Message { get; set; }
         public string CreatedOn { get; set; }
-        [Required]
         public string UserId { get; set; }
         public string Username { get; set; }
         public string ImageUrl { get; set; }

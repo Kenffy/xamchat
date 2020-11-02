@@ -2,7 +2,21 @@
     {
         "Id": 1,
         "ImageUrl": "ImageUrl",
-        "VideoUrl": "VideoUrl",
+        "VideoUrl": "https://www.youtube.com/watch?v=fJsuInsPPLo&list=RDHM9w1pRFHmo&index=3&ab_channel=Sniper-Topic",
+        "AudioUrl": "AudioUrl",
+        "DocumentUrl": "DocumentUrl"
+    },
+    {
+        "Id": 2,
+        "ImageUrl": "images/chats/audi-a4.jpg",
+        "VideoUrl": "https://www.youtube.com/watch?v=HM9w1pRFHmo&list=RDHM9w1pRFHmo&start_radio=1&ab_channel=Dinos",
+        "AudioUrl": "audios/mp3/Teddy Benzo - Ange et démon.mp3",
+        "DocumentUrl": "docs/TestReport.pdf"
+    },
+    {
+        "Id": 3,
+        "ImageUrl": "images/chats/opel-astra.jpg",
+        "VideoUrl": "https://www.youtube.com/watch?v=HM9w1pRFHmo&list=RDHM9w1pRFHmo&start_radio=1&ab_channel=Dinos",
         "AudioUrl": "AudioUrl",
         "DocumentUrl": "DocumentUrl"
     }

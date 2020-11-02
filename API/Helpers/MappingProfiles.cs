@@ -9,12 +9,13 @@ namespace API.Helpers
     {
         public MappingProfiles()
         {
-            CreateMap<Chat, ChatDto>()
-                .ForMember(m => m.ImageUrl, c => c.MapFrom(s => s.Media.ImageUrl))
+            CreateMap<Chat, ChatDto>();
+                /*.ForMember(m => m.ImageUrl, c => c.MapFrom(s => s.Media.ImageUrl))
                 .ForMember(m => m.VideoUrl, c => c.MapFrom(s => s.Media.VideoUrl))
                 .ForMember(m => m.AudioUrl, c => c.MapFrom(s => s.Media.AudioUrl))
-                .ForMember(m => m.DocumentUrl, c => c.MapFrom<ChatUrlResolver>());
-
+                .ForMember(m => m.DocumentUrl, c => c.MapFrom<ChatUrlResolver>());*/
+                
+            CreateMap<ChatDto, Chat>();
             CreateMap<Address, AddressDto>().ReverseMap();
             CreateMap<AppUser, UserDto>()
                 .ForMember(m => m.FullName, u => u.MapFrom(x => x.FullName))

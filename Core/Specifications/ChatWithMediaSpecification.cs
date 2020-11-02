@@ -5,10 +5,13 @@ namespace Core.Specifications
     public class ChatWithMediaSpecification : BaseSpecification<Chat>
     {
         public ChatWithMediaSpecification(ChatSpecParams chatParams): base(x =>
+            ((string.IsNullOrEmpty(chatParams.me) || x.Sender == chatParams.me) &&
+             (string.IsNullOrEmpty(chatParams.wu) || x.Receiver == chatParams.wu)) ||
+            ((string.IsNullOrEmpty(chatParams.me) || x.Receiver == chatParams.me) &&
+             (string.IsNullOrEmpty(chatParams.wu) || x.Sender == chatParams.wu)) &&
             (string.IsNullOrEmpty(chatParams.Search) || x.Message.ToLower().Contains(chatParams.Search)))
         {
-            AddInclude(x => x.Media);
-            AddOrderBy(x => x.CreatedOn);
+            AddOrderBy(x => x.Id);
             ApplyPaging(chatParams.PageSize * (chatParams.PageIndex -1), chatParams.PageSize);
 
             if(!string.IsNullOrEmpty(chatParams.Sort))
@@ -22,7 +25,7 @@ namespace Core.Specifications
                         AddOrderByDescending(c => c.Id);
                         break;
                     default:
-                        AddOrderBy(x => x.CreatedOn);
+                        AddOrderBy(x => x.Id);
                         break;
                 }
             }

@@ -47,8 +47,6 @@ namespace Infrastructure.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MediaId");
-
                     b.ToTable("Chats");
                 });
 
@@ -73,15 +71,6 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Medias");
-                });
-
-            modelBuilder.Entity("Core.Entities.Chat", b =>
-                {
-                    b.HasOne("Core.Entities.Media", "Media")
-                        .WithMany()
-                        .HasForeignKey("MediaId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

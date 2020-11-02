@@ -1,5 +1,6 @@
 using System.Reflection;
 using Core.Entities;
+using Core.Identity.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Data
@@ -12,7 +13,6 @@ namespace Infrastructure.Data
 
         public DbSet<Chat> Chats { get; set; }
         public DbSet<Media> Medias { get; set; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);

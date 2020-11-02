@@ -13,7 +13,9 @@ namespace API.Extensions
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddScoped<ITokenService, TokenService>();
-            services.AddScoped<IChatRepository, ChatRepository>();
+            services.AddScoped<IChatServices, ChatServices>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            //services.AddScoped<IChatRepository, ChatRepository>();
             services.AddScoped(typeof(IRepository<>), (typeof(Repository<>)));
 
             services.Configure<ApiBehaviorOptions>(options =>

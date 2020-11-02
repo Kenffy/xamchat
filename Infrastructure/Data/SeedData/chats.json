@@ -1,34 +1,38 @@
 [
   {
+    "Id": 1,
     "Sender": "admin@gmail.com",
     "Receiver": "hulrich@gmail.com",
     "Message": "Hi!",
     "CreatedOn": "2020-10-26T00:00:00",
-    "UserId": "user1",
+    "UserId": "aa38829e-323b-4c40-8541-c9209ca139cc",
     "MediaId": 1
   },
   {
+    "Id": 2,
     "Sender": "hulrich@gmail.com",
     "Receiver": "admin@gmail.com",
     "Message": "Hi! ca dikoi",
     "CreatedOn": "2020-10-26T00:00:00",
-    "UserId": "user2",
-    "MediaId": 1
+    "UserId": "bcc99165-fb1b-4e0a-8c10-b2de4046ab50",
+    "MediaId": 2
   },
   {
+    "Id": 3,
     "Sender": "admin@gmail.com",
     "Receiver": "hulrich@gmail.com",
     "Message": "Non ca va je suis la et toi?",
     "CreatedOn": "2020-10-26T00:00:00",
-    "UserId": "user1",
-    "MediaId": 1
+    "UserId": "aa38829e-323b-4c40-8541-c9209ca139cc",
+    "MediaId": 3
   },
   {
+    "Id": 4,
     "Sender": "hulrich@gmail.com",
     "Receiver": "admin@gmail.com",
     "Message": "ca va on gere",
     "CreatedOn": "2020-10-26T00:00:00",
-    "UserId": "user2",
+    "UserId": "bcc99165-fb1b-4e0a-8c10-b2de4046ab50",
     "MediaId": 1
     
   }

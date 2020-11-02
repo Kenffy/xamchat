@@ -1,4 +1,6 @@
 using System;
+using System.ComponentModel.DataAnnotations.Schema;
+using Core.Identity.Entities;
 
 namespace Core.Entities
 {
@@ -9,8 +11,8 @@ namespace Core.Entities
         public string Message { get; set; }
         public DateTime CreatedOn { get; set; }
         public string UserId { get; set; }
-        //public AppUser User { get; set; }
         public int MediaId { get; set; }
+        [NotMapped]
         public Media Media { get; set; }
     }
 }

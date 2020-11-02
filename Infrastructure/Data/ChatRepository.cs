@@ -33,5 +33,10 @@ namespace Infrastructure.Data
         {
             return await _context.Medias.ToListAsync();
         }
+
+        public async Task<Chat> SendChatAsync(Chat chat)
+        {
+            return await _context.Chats.Include(m => m.Media).FirstOrDefaultAsync();
+        }
     }
 }
